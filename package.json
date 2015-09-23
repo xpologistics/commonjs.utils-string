@@ -1,5 +1,5 @@
 {
-  "name": "commonjs.utils-string",
+  "name": "xpo-stringjs",
   "version": "0.0.1",
   "description": "Utilities for manipulating strings in javascript",
   "main": "index.js",
