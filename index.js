@@ -1,4 +1,4 @@
-module.exports = StringUtils;
+// WARNING: Singleton instance - don't store state
 
 /* **
     Library for manipulating strings
@@ -6,14 +6,14 @@ module.exports = StringUtils;
     return it as a seperate instance
  */
 function StringUtils() {
-    if (!this instanceof StringUtils)
+    if (!(this instanceof StringUtils))
         return new StringUtils();
 }
 
 /* **
     Pads the left side of the string with value up to padding characters
  */
-StringUtils.prototype = function padLeft(value, padding) {
+StringUtils.prototype.padLeft = function (value, padding) {
     padding = padding || 7;
 
     value = String(value);
@@ -31,7 +31,7 @@ StringUtils.prototype = function padLeft(value, padding) {
 /* **
     Pads the right side of the string with value up to padding characters
  */
-StringUtils.prototype = function padRight(value, padding) {
+StringUtils.prototype.padRight = function (value, padding) {
     padding = padding || 7;
 
     value = String(value);
@@ -47,3 +47,5 @@ StringUtils.prototype = function padRight(value, padding) {
 
     return (value + padstr);
 };
+
+module.exports = new StringUtils();
